@@ -1,6 +1,8 @@
 # Deploying fast.ai Chapter 2 code in early 2024
+
 ## Issues Issues Issues
 I'm working through the fast.ai Practical Deep Learning for Coders [course](https://course.fast.ai/) and the accompanying [fastbook](https://github.com/fastai/fastbook) in late 2023/early 2024. My initial impressions of the course are really good - [Jeremy Howard](https://jeremy.fast.ai/) has a wealth of experience and a lovely way of explaining things. That said, getting set up and getting going in Chapter 1 was a bit of a challenge and then, in Chapter 2 I found myself in python dependency hell which took many hours to unpick - partly because of my own confusion about  the various python environment management approaches and partly because things moved on since the videos.  Jeremy tries to simplify things with a github repo called [fastsetup](https://github.com/fastai/fastsetup) - supposedly just run this and everything will auto-magically work but alas, that wasn't my experience. The book is also more up to date than the video (I think) but when things still didn't work that added to my confusion. This post describes the issues I came across, at least the ones that I remember and solved, and how I ended up fixing them - in the hope that it's useful to anyone following the course around about now and encountering the same issues. In some cases I did kinda find answers hidden in the fastai [forums](https://forums.fast.ai/t/lesson-2-official-topic/96033) but I never could get the AI summary of the topics that Jeremy mentioned in the video to work and digging through reams of posts from mid-2022 wasn't very fulfilling, especially when the issue was a python dependency that wasn't relevant back then. 
+
 ## What issues? 
 Here's a short list of the problems that I had and I'll dig into each one explaining how I fixed it.
 1. Jupyter Notebook or Jupyter Lab?  Jupyter version 3 or version 4?  Installing notebook extensions has changed and anyway, do Notebook extensions work in Lab and do I need them?  Why does everything work in Colab but not on my local machine?   How do I get Jupyter to recognise my environment - do I need to install the ipykernel to make this work?  Getting everything working locally was by far the biggest time-sink I faced.
@@ -8,6 +10,7 @@ Here's a short list of the problems that I had and I'll dig into each one explai
 3. Running the app using `gradio` was also challenging for me - using exactly the same code from Tanishq's excellent [tutorial](https://www.tanishq.ai/blog/posts/2021-11-16-gradio-huggingface.html) didn't work and I spent an age figuring out why. 
 4. Finally, getting it all working on Hugging Face was harder than it needed to be - mainly because they now need you to use SSH instead of user-name / password for the git bits. 
 5. As a bonus, let's chat about the Jupyter debugger. 
+
 ## Getting the environment set up locally
 Okay, let's talk about this. When you run Jupyter, you can run either `Jupyter notebook` or `Juputer lab`. Jupyter Notebook is supposedly a simpler, and maybe, older, user interface whereas as far as I can tell, Jupyter lab is what most people use today and the current version of Jupyter is 4.x. Jeremy seems to be running notebook, maybe under Jupyter version 2 or something - it's not entirely clear. But he then installs a bunch of extensions. Jupyter extensions make the user interface much more useful but of course, I ended up running Jupyter Lab and trying to install the extensions. This seems to be unnecessary because Lab already includes most of the useful functionality natively, and as far as I could tell, most of the extensions that Jeremy talks about don't even work on Lab. Also, back in Jupyter 2 days, extensions were installed by compiling them with various commands that web search and ChatGPT will still tell you about but have mostly been deprecated but you'll waste tons of time chasing it all down. 
 
@@ -63,7 +66,7 @@ git remote set-url origin git@hf.co:spaces/schottyd/fastai_c2_bear_classifier
 
 replacing the part after "spaces" with your own space name, of course. 
 
-# The end
+# That's all folks
 So that's it - hopefully this helps someone and if not, at least I got to check off the last task in the chapter and now I can happily move on to Chapter 3. 
 
 Comments welcome.  
